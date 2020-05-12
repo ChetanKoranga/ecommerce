@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Login
+    </title>
+  </head>
+  <body>
+    {% if form.errors %}
+    <p>
+      There is an error
+    </p>
+    {% endif %} {% if next %}
+    <p>You can access the page</p>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      <h3>Username {{form.username}}</h3>
+      <h3>Password {{form.password}}</h3>
+      <input type="submit" name="Submit" />
+    </form>
+  </body>
+</html>
