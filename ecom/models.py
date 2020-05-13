@@ -20,11 +20,3 @@ class Product(models.Model):
     
     def __str__(self):
         return self.product_name
-
-
-
-    def __str__(self):
-        return self.subcategory_name
-
-    def __str__(self):
-        return self.category_name
