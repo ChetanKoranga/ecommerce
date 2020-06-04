@@ -1,0 +1,6 @@
+Django
+gunicorn
+django-crispy-forms
+django-cors-headers
+djangorestframework
+mysqlclient

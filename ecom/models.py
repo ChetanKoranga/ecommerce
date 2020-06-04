@@ -15,6 +15,7 @@ class SubCategory(models.Model):
 
 class Product(models.Model):
     product_name = models.CharField(max_length = 50)
+    product_price = models.IntegerField(default=True)
     subcategory_name = models.ManyToManyField(SubCategory, blank=True)
     category_name = models.ManyToManyField(Category, blank=True)
     
