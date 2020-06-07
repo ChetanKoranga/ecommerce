@@ -12,11 +12,12 @@ def login(request):
 
         if user:
             auth.login(request, user)
+            request.session['is_logged'] = True
             return redirect('ecom:index')
 
         else:
             messages.info(request, 'Invalid Credentials')
-            return redirect('login')
+            return redirect('authentication:login')
 
     return render(request, 'authentication/login.html')
 

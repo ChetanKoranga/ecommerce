@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.urls import path, include
 from . import views
 
-# app_name = "authentication"
+app_name = "authentication"
 
 urlpatterns = [
     # path("", include())
