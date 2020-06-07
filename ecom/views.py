@@ -3,7 +3,8 @@ from django.contrib import messages
 
 
 def index(request):
-    return render(request, 'ecom/home.html')
+    title = 'Online Shopping India | Buy Mobile, Electronics, Fashion...'
+    return render(request, 'ecom/home.html', {'title': title})
 
 
 def about(request):

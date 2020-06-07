@@ -18,8 +18,15 @@ def login(request):
         else:
             messages.info(request, 'Invalid Credentials')
             return redirect('authentication:login')
-
+    # if request.session.has_key('is_logged'):
+    #     return redirect(request, 'ecom:index')
     return render(request, 'authentication/login.html')
+
+
+def logout(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect("authentication:login")
 
 
 def register(request):
