@@ -8,7 +8,7 @@ class Category(models.Model):
 
 class SubCategory(models.Model):
     subcategory_name = models.CharField(max_length = 50)
-    category_name = models.ManyToManyField(Category, blank=True)
+    category_name = models.ForeignKey(Category, on_delete=models.CASCADE, default="", blank=True)
 
     def __str__(self):
         return self.subcategory_name

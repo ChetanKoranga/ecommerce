@@ -1,4 +1,4 @@
-Django
+django
 gunicorn
 django-crispy-forms
 django-cors-headers
