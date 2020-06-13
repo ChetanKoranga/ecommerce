@@ -83,17 +83,17 @@
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="{% url 'ecom:index' %}">Home</a></li>
-                                            <li><a href="Catagori.html">Category</a></li>
+                                            <li><a href="{% url 'ecom:category' %}">Category</a></li>
                                             <li class="hot"><a href="#">Latest</a>
                                                 <ul class="submenu">
                                                     <li><a href="product_list.html"></a> Product list</a></li>
                                                     <li><a href="single-product.html"> Product Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="blog.html">Blog</a>
+                                            <li><a href="#">Blog</a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Details</a></li>
+                                                    <li><a href="{% url 'ecom:blog' %}">Blog</a></li>
+                                                    <li><a href="{% url 'ecom:blog-detail' %}">Blog Details</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#">Pages</a>
@@ -126,7 +126,7 @@
                                     </li>
                                     <li>
                                         <div class="shopping-card">
-                                            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                            <a href="{% url 'ecom:cart' %}"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>
                                     <li class="d-none d-lg-block"> <a href="{% url 'authentication:login' %}" class="btn header-btn">Sign in</a></li>
