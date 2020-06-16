@@ -21,12 +21,14 @@ def cart(request):
     else:
         return redirect('authentication:login')
 
+
 def category(request):
     return render(request, 'ecom/category.html')
+
 
 def blog(request):
     return render(request, 'ecom/blog.html')
 
+
 def blogdetail(request):
     return render(request, 'ecom/blogdetail.html')
-   
