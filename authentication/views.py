@@ -1,29 +1,35 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.contrib.auth import logout
 
 
 def login(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
+    if not request.session.get('session_status') == 'logged_in' and not request.session.get('user_id') == 1:
+        if request.method == "POST":
+            username = request.POST['username']
+            password = request.POST['password']
 
-        user = auth.authenticate(username=username, password=password)
+            user = auth.authenticate(username=username, password=password)
 
-        if user:
-            auth.login(request, user)
-            request.session['is_logged'] = True
-            return redirect('ecom:index')
+            if user:
+                auth.login(request, user)
+                request.session['user_id'] = 1
+                request.session['session_status'] = 'logged_in'
+                return redirect('ecom:index')
 
+            else:
+                messages.info(request, 'Invalid Credentials')
+                return redirect('authentication:login')
+            # if request.session.has_key('is_logged'):
+            #     return redirect(request, 'ecom:index')
         else:
-            messages.info(request, 'Invalid Credentials')
-            return redirect('authentication:login')
-    # if request.session.has_key('is_logged'):
-    #     return redirect(request, 'ecom:index')
-    return render(request, 'authentication/login.html')
+            return render(request, 'authentication/login.html')
+    else:
+        return redirect('ecom:index')
 
 
-def logout(request):
+def signout(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
     return redirect("authentication:login")
@@ -46,3 +52,44 @@ def register(request):
 
     else:
         return render(request, "registration/register.html")
+
+
+def setCookie():
+    if not request.COOKIES.get('team'):
+        response = HttpResponse("Visiting for the first time.")
+        response.set_cookie('team', 'barcelona', max_age=1200)
+        return response
+    else:
+        return HttpResponse("Your favorite team is {}".format(request.COOKIES['team']))
+
+
+def save_session_data(request):
+    # set new data
+    request.session['user_id'] = 20
+    request.session['team'] = 'Barcelona'
+    return HttpResponse("Session Data Saved")
+
+
+def access_session_data(request):
+    response = ""
+    if request.session.get('user_id'):
+        user_id = request.session.get('user_id')
+        response += "User Id : {0} <br>".format(user_id)
+    if request.session.get('team'):
+        team = request.session.get('team')
+        response += "Team : {0} <br>".format(team)
+
+    if not response:
+        return HttpResponse("No session data")
+    else:
+        return HttpResponse(response)
+
+
+def delete_session_data(request):
+    try:
+        del request.session['user_id']
+        del request.session['team']
+    except KeyError:
+        pass
+
+    return HttpResponse("Session Data cleared")

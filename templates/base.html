@@ -129,8 +129,11 @@
                                             <a href="{% url 'ecom:cart' %}"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>
+                                    {% if user.is_authenticated %}
+                                    <li class="d-none d-lg-block"> <a href="{% url 'authentication:logout' %}" class="btn header-btn">Sign out</a></li>
+                                    {% else %}
                                     <li class="d-none d-lg-block"> <a href="{% url 'authentication:login' %}" class="btn header-btn">Sign in</a></li>
-                                   
+                                    {% endif %}
                                 </ul>
                             </div>
                             <!-- Mobile Menu -->
@@ -162,7 +165,7 @@
                              </div>
                              <div class="footer-tittle">
                                  <div class="footer-pera">
-                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                                     <p>Glutter.in is selling all make in India Products.</p>
                                 </div>
                              </div>
                          </div>

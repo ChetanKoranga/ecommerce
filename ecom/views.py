@@ -8,15 +8,11 @@ def index(request):
 
 
 def about(request):
-    if request.session.has_key('is_logged'):
-        return render(request, 'ecom/about.html')
-    else:
-        messages.info(request, 'Session not logged in')
-        return render(request, 'ecom/about.html')
+    return render(request, 'ecom/about.html')
 
 
 def cart(request):
-    if request.session.has_key('is_logged'):
+    if request.session.get('session_status') == 'logged_in' and request.session.get('user_id') == 1:
         return render(request, 'ecom/cart.html')
     else:
         return redirect('authentication:login')
