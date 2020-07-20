@@ -1,23 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<!-- slider Area Start-->
-<div class="slider-area">
-  <!-- Mobile Menu -->
-  <div
-    class="single-slider slider-height2 d-flex align-items-center"
-    data-background="assets/img/hero/category.jpg"
-  >
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="hero-cap text-center">
-            <h2>About</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- slider Area End-->
+
 
 <!-- product list part start-->
 <section class="about_us padding_top">
@@ -33,7 +15,7 @@
           </h3>
           <div class="about_us_video">
             <img
-              src="assets/img/about_us_video.png"
+              src="{%static 'img/about_us_video.png'%}"
               alt="#"
               class="img-fluid"
             />
@@ -75,25 +57,25 @@
     <div class="row justify-content-center">
       <div class="col-lg-3 col-sm-6">
         <div class="single_feature_part">
-          <img src="assets/img/icon/feature_icon_1.svg" alt="#" />
+          <img src="{%static 'img/icon/feature_icon_1.svg'%}" alt="#" />
           <h4>Credit Card Support</h4>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="single_feature_part">
-          <img src="assets/img/icon/feature_icon_2.svg" alt="#" />
+          <img src="{%static 'img/icon/feature_icon_2.svg'%}" alt="#" />
           <h4>Online Order</h4>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="single_feature_part">
-          <img src="assets/img/icon/feature_icon_3.svg" alt="#" />
+          <img src="{%static 'img/icon/feature_icon_3.svg'%}" alt="#" />
           <h4>Free Delivery</h4>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="single_feature_part">
-          <img src="assets/img/icon/feature_icon_4.svg" alt="#" />
+          <img src="{%static 'img/icon/feature_icon_4.svg'%}" alt="#" />
           <h4>Product with Gift</h4>
         </div>
       </div>
@@ -110,7 +92,7 @@
         <div class="client_review_slider owl-carousel">
           <div class="single_client_review">
             <div class="client_img">
-              <img src="assets/img/client.png" alt="#" />
+              <img src="{%static 'img/client.png'%}" alt="#" />
             </div>
             <p>
               "Working in conjunction with humanitarian aid agencies, we have
@@ -120,7 +102,7 @@
           </div>
           <div class="single_client_review">
             <div class="client_img">
-              <img src="assets/img/client_1.png" alt="#" />
+              <img src="{%static 'img/client_1.png'%}" alt="#" />
             </div>
             <p>
               "Working in conjunction with humanitarian aid agencies, we have
@@ -130,7 +112,7 @@
           </div>
           <div class="single_client_review">
             <div class="client_img">
-              <img src="assets/img/client_2.png" alt="#" />
+              <img src="{%static 'img/client_2.png'%}" alt="#" />
             </div>
             <p>
               "Working in conjunction with humanitarian aid agencies, we have

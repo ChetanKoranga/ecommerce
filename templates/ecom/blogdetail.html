@@ -1,25 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block title %} Glutter | Blog
 Detail {% endblock %} {% block content %}
 
-<!-- slider Area Start-->
-<div class="slider-area">
-  <!-- Mobile Menu -->
-  <div
-    class="single-slider slider-height2 d-flex align-items-center"
-    data-background="assets/img/hero/category.jpg"
-  >
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12">
-          <div class="hero-cap text-center">
-            <h2>Single Blog</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- slider Area End-->
 
 <!--================Blog Area =================-->
 <section class="blog_area single-post-area section-padding">
@@ -30,7 +11,7 @@ Detail {% endblock %} {% block content %}
           <div class="feature-img">
             <img
               class="img-fluid"
-              src="assets/img/blog/single_blog_1.png"
+              src="{%static 'img/blog/single_blog_1.png'%}"
               alt=""
             />
           </div>
@@ -119,7 +100,7 @@ Detail {% endblock %} {% block content %}
                   <a href="#">
                     <img
                       class="img-fluid"
-                      src="assets/img/post/preview.png"
+                      src="{%static 'img/post/preview.png'%}"
                       alt=""
                     />
                   </a>
@@ -154,7 +135,7 @@ Detail {% endblock %} {% block content %}
                   <a href="#">
                     <img
                       class="img-fluid"
-                      src="assets/img/post/next.png"
+                      src="{%static 'img/post/next.png'%}"
                       alt=""
                     />
                   </a>
@@ -165,7 +146,7 @@ Detail {% endblock %} {% block content %}
         </div>
         <div class="blog-author">
           <div class="media align-items-center">
-            <img src="assets/img/blog/author.png" alt="" />
+            <img src="{%static 'img/blog/author.png'%}" alt="" />
             <div class="media-body">
               <a href="#">
                 <h4>Harvard milan</h4>
@@ -184,7 +165,7 @@ Detail {% endblock %} {% block content %}
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="assets/img/comment/comment_1.png" alt="" />
+                  <img src="{%static 'img/comment/comment_1.png'%}" alt="" />
                 </div>
                 <div class="desc">
                   <p class="comment">
@@ -211,7 +192,7 @@ Detail {% endblock %} {% block content %}
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="assets/img/comment/comment_2.png" alt="" />
+                  <img src="{%static 'img/comment/comment_2.png'%}" alt="" />
                 </div>
                 <div class="desc">
                   <p class="comment">
@@ -238,7 +219,7 @@ Detail {% endblock %} {% block content %}
             <div class="single-comment justify-content-between d-flex">
               <div class="user justify-content-between d-flex">
                 <div class="thumb">
-                  <img src="assets/img/comment/comment_3.png" alt="" />
+                  <img src="{%static 'img/comment/comment_3.png'%}" alt="" />
                 </div>
                 <div class="desc">
                   <p class="comment">
@@ -395,7 +376,7 @@ Detail {% endblock %} {% block content %}
           <aside class="single_sidebar_widget popular_post_widget">
             <h3 class="widget_title">Recent Post</h3>
             <div class="media post_item">
-              <img src="assets/img/post/post_1.png" alt="post" />
+              <img src="{%static 'img/post/post_1.png'%}" alt="post" />
               <div class="media-body">
                 <a href="single-blog.html">
                   <h3>From life was you fish...</h3>
@@ -404,7 +385,7 @@ Detail {% endblock %} {% block content %}
               </div>
             </div>
             <div class="media post_item">
-              <img src="assets/img/post/post_2.png" alt="post" />
+              <img src="{%static 'img/post/post_2.png'%}" alt="post" />
               <div class="media-body">
                 <a href="single-blog.html">
                   <h3>The Amazing Hubble</h3>
@@ -413,7 +394,7 @@ Detail {% endblock %} {% block content %}
               </div>
             </div>
             <div class="media post_item">
-              <img src="assets/img/post/post_3.png" alt="post" />
+              <img src="{%static 'img/post/post_3.png'%}" alt="post" />
               <div class="media-body">
                 <a href="single-blog.html">
                   <h3>Astronomy Or Astrology</h3>
@@ -422,7 +403,7 @@ Detail {% endblock %} {% block content %}
               </div>
             </div>
             <div class="media post_item">
-              <img src="assets/img/post/post_4.png" alt="post" />
+              <img src="{%static 'img/post/post_4.png'%}" alt="post" />
               <div class="media-body">
                 <a href="single-blog.html">
                   <h3>Asteroids telescope</h3>
@@ -467,7 +448,7 @@ Detail {% endblock %} {% block content %}
                 <a href="#">
                   <img
                     class="img-fluid"
-                    src="assets/img/post/post_5.png"
+                    src="{%static 'img/post/post_5.png'%}"
                     alt=""
                   />
                 </a>
@@ -476,7 +457,7 @@ Detail {% endblock %} {% block content %}
                 <a href="#">
                   <img
                     class="img-fluid"
-                    src="assets/img/post/post_6.png"
+                    src="{%static 'img/post/post_6.png'%}"
                     alt=""
                   />
                 </a>
@@ -485,7 +466,7 @@ Detail {% endblock %} {% block content %}
                 <a href="#">
                   <img
                     class="img-fluid"
-                    src="assets/img/post/post_7.png"
+                    src="{%static 'img/post/post_7.png'%}"
                     alt=""
                   />
                 </a>
@@ -494,7 +475,7 @@ Detail {% endblock %} {% block content %}
                 <a href="#">
                   <img
                     class="img-fluid"
-                    src="assets/img/post/post_8.png"
+                    src="{%static 'img/post/post_8.png'%}"
                     alt=""
                   />
                 </a>
@@ -503,7 +484,7 @@ Detail {% endblock %} {% block content %}
                 <a href="#">
                   <img
                     class="img-fluid"
-                    src="assets/img/post/post_9.png"
+                    src="{%static 'img/post/post_9.png'%}"
                     alt=""
                   />
                 </a>
@@ -512,7 +493,7 @@ Detail {% endblock %} {% block content %}
                 <a href="#">
                   <img
                     class="img-fluid"
-                    src="assets/img/post/post_10.png"
+                    src="{%static 'img/post/post_10.png'%}"
                     alt=""
                   />
                 </a>

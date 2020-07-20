@@ -3,9 +3,9 @@ from rest_framework import routers
 from . import api
 
 router = routers.DefaultRouter()
-router.register('api/categories', api.CategoryViewSet, 'category')
-router.register('api/subcategories', api.SubCategoryViewSet, 'subcategory'),
-router.register('api/products', api.ProductViewSet, 'product')
+router.register('categories', api.CategoryViewSet, 'category')
+router.register('subcategories', api.SubCategoryViewSet, 'subcategory'),
+router.register('products', api.ProductViewSet, 'product')
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -37,21 +37,25 @@ def signout(request):
 
 def register(request):
     if request.method == "POST":
-        first_name = request.POST["firstname"]
-        last_name = request.POST["lastname"]
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
         username = request.POST["username"]
-        passwd1 = request.POST["passwd1"]
-        passwd2 = request.POST["passwd2"]
+        passwd1 = request.POST["password"]
+        passwd2 = request.POST["confirm_password"]
         email = request.POST["email"]
-
-        user = User.objects.create_user(
-            username=username, email=email, password=passwd1, first_name=first_name, last_name=last_name)
-        user.save()
-        print("User created...")
-        return redirect("/")
+        if passwd1 == passwd2:
+            user = User.objects.create_user(
+                username=username, email=email, password=passwd1, first_name=first_name, last_name=last_name)
+            user.save()
+            print("User created...")
+            return redirect("authentication:login")
+        else:
+            messages.error(
+                request, "Passwords doesn't matched.")
+            return render(request, "authentication/register.html")
 
     else:
-        return render(request, "registration/register.html")
+        return render(request, "authentication/register.html")
 
 
 def setCookie():
